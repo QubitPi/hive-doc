@@ -20,9 +20,10 @@
 name: GitHub Pages
 
 on:
+  pull_request:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - master  # Set a branch to deploy
 
 jobs:
   deploy:
@@ -44,13 +45,13 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Copy .asf.yaml
-        run: cp .asf.yaml ./public
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: asf-site
+          enable_jekyll: false
           destination_dir: ./
+          keep_files: true
+          user_name: QubitPi
+          user_email: jack20220723@gmail.com
