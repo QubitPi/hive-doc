@@ -1,4 +1,4 @@
-baseURL = 'https://qubitpi.github.io/hive-site'
+baseURL = 'https://hive.qubitpi.org'
 languageCode = 'en-us'
 title = 'Hive Site'
 theme = 'hive'
